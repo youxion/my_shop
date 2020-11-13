@@ -1,0 +1,137 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+table, th, td /* table elements 表格元素 */
+{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box; /* 兼容 */
+  box-sizing: border-box; /* 元素都以边框开始计算宽度，从而适应百分比布局。 */
+  -webkit-text-size-adjust: 100%; /* 旋转屏幕时，字体大小调整的问题 */
+  /* -webkit-text-size-adjust:none;  阻止旋转屏幕时自动调整字体大小 */
+}
+
+html {
+  -webkit-overflow-scrolling: touch; /* 上下拉动滚动条时卡顿、慢, 兼容android */
+  overflow-scrolling: touch; /* 兼容IOS */
+}
+
+body {
+  font: 12px/1.5 Microsoft YaHei, Arial, sans-serif, "宋体";
+  color: #666;
+}
+
+/* 去掉图片自带的四周间距 */
+img {
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+address, cite, em, i {
+  font-style: normal;
+}
+
+/* 将斜体扶正 */
+small {
+  font-size: 12px;
+}
+
+/*用于缩小字体，但是小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, li, ol {
+  list-style: none;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+  outline: none;
+  hide-focus: expression(this.hideFocus=true); /************/
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent; /* a标签点击时，移动端会默认显示高亮。此法清除高亮 */
+}
+
+/* a:hover{text-decoration:underline;} */
+
+/** 重置表单元素 **/
+legend {
+  color: #000;
+}
+
+/* for ie6 */
+
+fieldset, img, abbr, acronym {
+  border: none;
+}
+
+/* img 搭车：让a链接里的 img 无边框 ----------------------------*/
+
+input, button, select, textarea {
+  outline: none;
+  border: none;
+  font-size: 100%;
+  line-height: normal;
+  overflow: hidden;
+  -webkit-appearance: none; /* 清除移动端默认的表单样式 */
+
+}
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+/** 重置表格元素 **/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+}
+
+/* li里面的a链接随着li的宽度变化 */
+li a {
+  display: block;
+  width: 100%;
+}
+
+/* ie6 7 8(q) bug  -------------------------------*/
+iframe {
+  display: block;
+}
+
+/* 清浮动 */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1; /* for IE6 IE7 */
+}
+
+/* 清除特殊标记的字体和字号 */
+address, caption, cite, code, dfn, em, strong, th, var {
+  　　font-weight: normal;
+  　　font-style: normal;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/*文本框禁止托拽*/
+/* 向上的三角形
+.triangle{width:0;height:0;content:"";border:10px solid transparent;
+							border-bottom-color:#d1730d;position:absolute;backTop:-20px;left:285px;}
+*/
